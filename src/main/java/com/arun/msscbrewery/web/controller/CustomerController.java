@@ -1,5 +1,6 @@
 package com.arun.msscbrewery.web.controller;
 
+import com.arun.msscbrewery.web.model.BeerDto;
 import com.arun.msscbrewery.web.model.CustomerDto;
 import com.arun.msscbrewery.web.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,5 +40,11 @@ public class CustomerController {
         //TODO get the request URL
         headers.add("location", "/api/v1/customer/" + customer.getId().toString());
         return new ResponseEntity(headers, HttpStatus.CREATED);
+    }
+
+    @PutMapping("/v1/customer/{id}")
+    public ResponseEntity updateCustomer(@PathVariable("id") String id, @RequestBody CustomerDto customerDto) {
+        customerService.updateCustomer(id, customerDto);
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 }

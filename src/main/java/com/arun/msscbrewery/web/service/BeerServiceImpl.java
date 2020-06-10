@@ -29,4 +29,9 @@ public class BeerServiceImpl implements BeerService {
         //TODO
         return null;
     }
+
+    @Override
+    public void updateBeer(String id, BeerDto beerDto) {
+        //TODO
+    }
 }

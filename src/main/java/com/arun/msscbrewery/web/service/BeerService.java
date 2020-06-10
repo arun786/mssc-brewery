@@ -11,4 +11,6 @@ public interface BeerService {
     List<BeerDto> getAllBeer();
 
     BeerDto saveBeer(BeerDto beerDto);
+
+    void updateBeer(String id, BeerDto beerDto);
 }

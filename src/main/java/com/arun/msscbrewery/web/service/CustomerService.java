@@ -11,4 +11,6 @@ public interface CustomerService {
     List<CustomerDto> getAllCustomer();
 
     CustomerDto saveCustomer(CustomerDto customerDto);
+
+    void updateCustomer(String id, CustomerDto customerDto);
 }

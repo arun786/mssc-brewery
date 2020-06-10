@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CustomerServiceImpl implements CustomerService{
+public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerDto getCustomerBasedOnId(String id) {
@@ -19,7 +19,7 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
-    public void saveCustomer(CustomerDto customerDto) {
-
+    public CustomerDto saveCustomer(CustomerDto customerDto) {
+        return null;
     }
 }

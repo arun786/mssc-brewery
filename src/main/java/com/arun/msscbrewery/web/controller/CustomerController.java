@@ -3,6 +3,7 @@ package com.arun.msscbrewery.web.controller;
 import com.arun.msscbrewery.web.model.CustomerDto;
 import com.arun.msscbrewery.web.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -33,7 +34,10 @@ public class CustomerController {
 
     @PostMapping("/v1/customer")
     public ResponseEntity saveCustomer(@RequestBody CustomerDto customerDto) {
-        customerService.saveCustomer(customerDto);
-        return new ResponseEntity(HttpStatus.NO_CONTENT);
+        CustomerDto customer = customerService.saveCustomer(customerDto);
+        HttpHeaders headers = new HttpHeaders();
+        //TODO get the request URL
+        headers.add("location", "/api/v1/customer/" + customer.getId().toString());
+        return new ResponseEntity(headers, HttpStatus.NO_CONTENT);
     }
 }

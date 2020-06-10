@@ -10,5 +10,5 @@ public interface CustomerService {
 
     List<CustomerDto> getAllCustomer();
 
-    void saveCustomer(CustomerDto customerDto);
+    CustomerDto saveCustomer(CustomerDto customerDto);
 }

@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @Slf4j
 @RequestMapping("/api")
@@ -26,5 +28,11 @@ public class BeerController {
     public ResponseEntity<BeerDto> getBeerById(@PathVariable("id") String id) {
         BeerDto beerBasedOnId = beerService.getBeerBasedOnId(id);
         return ResponseEntity.ok(beerBasedOnId);
+    }
+
+    @GetMapping("/v1/beer")
+    public ResponseEntity<List<BeerDto>> getAllBeer() {
+        List<BeerDto> allBeer = beerService.getAllBeer();
+        return ResponseEntity.ok(allBeer);
     }
 }

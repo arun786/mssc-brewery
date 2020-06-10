@@ -9,4 +9,6 @@ public interface BeerService {
     BeerDto getBeerBasedOnId(String id);
 
     List<BeerDto> getAllBeer();
+
+    void saveBeer(BeerDto beerDto);
 }

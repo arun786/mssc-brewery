@@ -23,4 +23,10 @@ public class BeerServiceImpl implements BeerService {
         BeerDto beerDto = BeerDto.builder().beerName("Mango Bobs").id(UUID.randomUUID()).upc(10l).beerStyle("LAGER").build();
         return Collections.singletonList(beerDto);
     }
+
+    @Override
+    public void saveBeer(BeerDto beerDto) {
+        //TODO
+
+    }
 }

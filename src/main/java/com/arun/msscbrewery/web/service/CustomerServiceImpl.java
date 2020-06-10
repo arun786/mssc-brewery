@@ -32,4 +32,9 @@ public class CustomerServiceImpl implements CustomerService {
         //TODO
 
     }
+
+    @Override
+    public void deleteCustomer(String id) {
+        //TODO
+    }
 }

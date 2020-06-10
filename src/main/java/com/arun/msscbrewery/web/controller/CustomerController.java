@@ -47,4 +47,10 @@ public class CustomerController {
         customerService.updateCustomer(id, customerDto);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
+
+    @DeleteMapping("/v1/customer/{id}")
+    public ResponseEntity deleteCustomer(@PathVariable("id") String id) {
+        customerService.deleteCustomer(id);
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
+    }
 }

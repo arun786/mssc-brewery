@@ -34,4 +34,11 @@ public class BeerServiceImpl implements BeerService {
     public void updateBeer(String id, BeerDto beerDto) {
         //TODO
     }
+
+    @Override
+    public void deleteBeer(String id) {
+        //TODO
+    }
+
+
 }

@@ -1,9 +1,9 @@
 package com.arun.msscbrewery.web.service;
 
 import com.arun.msscbrewery.web.model.BeerDto;
+import com.arun.msscbrewery.web.model.BeerDtoV2;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
@@ -38,6 +38,24 @@ public class BeerServiceImpl implements BeerService {
     @Override
     public void deleteBeer(String id) {
         //TODO
+    }
+
+    @Override
+    public BeerDtoV2 getBeerBasedOnIdV2(String id) {
+        //TODO
+        return null;
+    }
+
+    @Override
+    public List<BeerDtoV2> getAllBeerV2() {
+        //TODO
+        return null;
+    }
+
+    @Override
+    public BeerDtoV2 saveBeerV2(BeerDtoV2 beerDtoV2) {
+        //TODO
+        return null;
     }
 
 

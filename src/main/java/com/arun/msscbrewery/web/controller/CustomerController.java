@@ -38,6 +38,6 @@ public class CustomerController {
         HttpHeaders headers = new HttpHeaders();
         //TODO get the request URL
         headers.add("location", "/api/v1/customer/" + customer.getId().toString());
-        return new ResponseEntity(headers, HttpStatus.NO_CONTENT);
+        return new ResponseEntity(headers, HttpStatus.CREATED);
     }
 }

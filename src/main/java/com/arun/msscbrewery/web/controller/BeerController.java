@@ -4,6 +4,7 @@ import com.arun.msscbrewery.web.model.BeerDto;
 import com.arun.msscbrewery.web.service.BeerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -36,7 +37,9 @@ public class BeerController {
 
     @PostMapping("/v1/beer")
     public ResponseEntity saveBeer(@RequestBody BeerDto beerDto) {
-        beerService.saveBeer(beerDto);
-        return new ResponseEntity(HttpStatus.NO_CONTENT);
+        BeerDto beer = beerService.saveBeer(beerDto);
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("location","/api/v1/beer/" + beer.getId().toString());
+        return new ResponseEntity(headers,HttpStatus.CREATED);
     }
 }

@@ -10,5 +10,5 @@ public interface BeerService {
 
     List<BeerDto> getAllBeer();
 
-    void saveBeer(BeerDto beerDto);
+    BeerDto saveBeer(BeerDto beerDto);
 }
